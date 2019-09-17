@@ -58,6 +58,12 @@
     <Compile Include="CoffeeShop.Designer.cs">
       <DependentUpon>CoffeeShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoffeeShopListUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoffeeShopListUi.Designer.cs">
+      <DependentUpon>CoffeeShopListUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BookShop.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoffeeShop.resx">
       <DependentUpon>CoffeeShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoffeeShopListUi.resx">
+      <DependentUpon>CoffeeShopListUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

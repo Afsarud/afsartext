@@ -51,3 +51,4 @@ F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.csproj.GenerateResource.c
 F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.csproj.CoreCompileInputs.cache
 F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.exe
 F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.pdb
+F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.CoffeeShopListUi.resources

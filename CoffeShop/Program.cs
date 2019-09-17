@@ -16,8 +16,9 @@ namespace CoffeShop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CoffeeShop());
+            //Application.Run(new CoffeeShop());
             //Application.Run(new BookShop());
+            Application.Run(new CoffeeShopListUi());
         }
     }
 }
