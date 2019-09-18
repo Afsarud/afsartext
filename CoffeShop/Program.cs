@@ -15,10 +15,11 @@ namespace CoffeShop
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CoffeeShop());
             //Application.Run(new BookShop());
             Application.Run(new CoffeeShopListUi());
+           //Application.Run(new CoffeeShopListUiProject());
         }
     }
 }

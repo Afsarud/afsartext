@@ -12,6 +12,14 @@ namespace CoffeShop
 {
     public partial class CoffeeShopListUi : Form
     {
+        int price = 0, index = 0;
+        List<String> customerNames = new List<string>();
+        List<string> contactNumbers = new List<string>();
+        List<String> addresses = new List<String>();
+        List<string> orders = new List<string>();
+        List<int> queintityes = new List<int>();
+        List<int> totalPrices = new List<int>();
+       
         public CoffeeShopListUi()
         {
             InitializeComponent();
@@ -19,8 +27,14 @@ namespace CoffeShop
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            string order = orderComboBox.Text;
-            int productQuantity = Convert.ToInt32(quantityTextBox.Text);
+            string customerName = CusNameTextBox.Text;
+            string contactNumber = contactTextBox.Text;
+            string address = addressTextBox.Text;
+            string orderItem = orderComboBox.Text;
+            string queintity = quantityTextBox.Text;
+
+            //int productQuantity = Convert.ToInt32(quantityTextBox.Text);
+            
             int ProAmount = 0;
 
             if (orderComboBox.Text == "Black-120")
@@ -40,26 +54,68 @@ namespace CoffeShop
                 ProAmount = 80;
             }
 
-            int totalPrice = ProAmount * productQuantity;
+            int totalPrice = ProAmount * Convert.ToInt32(queintity);
 
-            const int num = 1;
-            List<string> name = new List<string> { };
-            for (int i = 0; i < num; i++)
-
+            for (int i = 0; i < contactNumbers.Count(); i++)
             {
-                name.Add(CusNameTextBox.Text);
-                name.Add(Convert.ToString(contactTextBox.Text));
-                name.Add(addressTextBox.Text);
-                name.Add(Convert.ToString(orderComboBox.SelectedItem));
-                name.Add(Convert.ToString(quantityTextBox.Text));
-                name.Add(Convert.ToString(totalPrice));
+                if (contactNumber == contactNumbers[i])
+                {
+                    MessageBox.Show("Contact no. already exist");
+                    return;
+                }
 
-                resultRichTextBox.Text += "\n Customer Name: " + name + "\n" +
-               "Contact Number: " + name + "\n" +
-               "Address: " + name + "\n " +
-               "Order Amount:" + name + "\n" +
-               "Quantity Value: " + name + "\n" +
-               "Total Price: " + name + "\n \n";
+            }
+                customerNames.Add(customerName);
+                contactNumbers.Add(contactNumber);
+                addresses.Add(address);
+                orders.Add(orderItem);
+                queintityes.Add(Convert.ToInt32(queintity));
+                totalPrices.Add(totalPrice);
+
+            resultRichTextBox.Text += "";
+            for (int i = 0; i < customerNames.Count(); i++)
+            {
+                resultRichTextBox.Text = "\n Customer Name: " + customerNames[i] + "\n" +
+               "Contact Number: " + contactNumbers[i] + "\n" +
+               "Address: " + addresses[i] + "\n " +
+               "Order Amount:" + orders[i] + "\n" +
+               "Quantity Value: " + queintityes[i] + "\n" +
+               "Total Price: " + totalPrices[i] + "\n \n";
+            }
+
+            index++;
+            
+
+            CusNameTextBox.Text = "";
+            contactTextBox.Text = "";
+            addressTextBox.Text = "";
+            orderComboBox.Text = "";
+            quantityTextBox.Text = "";
+
+        }
+       
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            resultRichTextBox.Text = "";
+
+            CusNameTextBox.Text = "";
+            contactTextBox.Text = "";
+            addressTextBox.Text = "";
+            orderComboBox.Text = "";
+            quantityTextBox.Text = "";
+        }
+
+        private void showAllButton_Click_1(object sender, EventArgs e)
+        {
+            resultRichTextBox.Text += "";
+            for (int i = 0; i < customerNames.Count(); i++)
+            {
+                resultRichTextBox.Text += "\n Customer Name: " + customerNames[i] + "\n" +
+               "Contact Number: " + contactNumbers[i] + "\n" +
+               "Address: " + addresses[i] + "\n " +
+               "Order Amount:" + orders[i] + "\n" +
+               "Quantity Value: " + queintityes[i] + "\n" +
+               "Total Price: " + totalPrices[i] + "\n \n";
             }
         }
     }
