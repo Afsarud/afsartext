@@ -60,7 +60,7 @@ namespace CoffeShop
             {
                 if (contactNumber == contactNumbers[i])
                 {
-                    MessageBox.Show("Contact no. already exist");
+                    MessageBox.Show("Contact Number already exist so retype other number");
                     return;
                 }
 
