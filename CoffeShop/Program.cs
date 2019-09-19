@@ -18,7 +18,8 @@ namespace CoffeShop
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CoffeeShop());
             //Application.Run(new BookShop());
-            Application.Run(new CoffeeShopListUi());
+            //Application.Run(new CoffeeShopListUi());
+            Application.Run(new StudentIformatioListUi());
         }
     }
 }
