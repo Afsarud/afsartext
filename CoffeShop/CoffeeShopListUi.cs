@@ -73,15 +73,18 @@ namespace CoffeShop
                 totalPrices.Add(totalPrice);
 
             resultRichTextBox.Text += "";
-            for (int i = 0; i < customerNames.Count(); i++)
-            {
-                resultRichTextBox.Text = "\n Customer Name: " + customerNames[i] + "\n" +
-               "Contact Number: " + contactNumbers[i] + "\n" +
-               "Address: " + addresses[i] + "\n " +
-               "Order Amount:" + orders[i] + "\n" +
-               "Quantity Value: " + queintityes[i] + "\n" +
-               "Total Price: " + totalPrices[i] + "\n \n";
-            }
+            ShowAllCustomerInformation(index,index);
+
+            index++;
+            //for (int i = 0; i < customerNames.Count(); i++)
+            //{
+            //    resultRichTextBox.Text = "\n Customer Name: " + customerNames[i] + "\n" +
+            //   "Contact Number: " + contactNumbers[i] + "\n" +
+            //   "Address: " + addresses[i] + "\n " +
+            //   "Order Amount:" + orders[i] + "\n" +
+            //   "Quantity Value: " + queintityes[i] + "\n" +
+            //   "Total Price: " + totalPrices[i] + "\n \n";
+            //}
 
             index++;
             
@@ -93,7 +96,19 @@ namespace CoffeShop
             quantityTextBox.Text = "";
 
         }
-       
+        private void ShowAllCustomerInformation(int firstindex, int lastindex)
+        {
+            resultRichTextBox.Text += "";
+            for (int i = firstindex; i < lastindex; i++)
+            {
+                resultRichTextBox.Text += "\n Customer Name: " + customerNames[i] + "\n" +
+               "Contact Number: " + contactNumbers[i] + "\n" +
+               "Address: " + addresses[i] + "\n " +
+               "Order Amount:" + orders[i] + "\n" +
+               "Quantity Value: " + queintityes[i] + "\n" +
+               "Total Price: " + totalPrices[i] + "\n \n";
+            }
+        }
         private void resetButton_Click(object sender, EventArgs e)
         {
             resultRichTextBox.Text = "";
@@ -104,19 +119,22 @@ namespace CoffeShop
             orderComboBox.Text = "";
             quantityTextBox.Text = "";
         }
+       
 
         private void showAllButton_Click_1(object sender, EventArgs e)
         {
-            resultRichTextBox.Text += "";
-            for (int i = 0; i < customerNames.Count(); i++)
-            {
-                resultRichTextBox.Text += "\n Customer Name: " + customerNames[i] + "\n" +
-               "Contact Number: " + contactNumbers[i] + "\n" +
-               "Address: " + addresses[i] + "\n " +
-               "Order Amount:" + orders[i] + "\n" +
-               "Quantity Value: " + queintityes[i] + "\n" +
-               "Total Price: " + totalPrices[i] + "\n \n";
-            }
+            //resultRichTextBox.Text += "";
+            ShowAllCustomerInformation(index, index);
+
+            //for (int i = 0; i < customerNames.Count(); i++)
+            //{
+            //    resultRichTextBox.Text += "\n Customer Name: " + customerNames[i] + "\n" +
+            //   "Contact Number: " + contactNumbers[i] + "\n" +
+            //   "Address: " + addresses[i] + "\n " +
+            //   "Order Amount:" + orders[i] + "\n" +
+            //   "Quantity Value: " + queintityes[i] + "\n" +
+            //   "Total Price: " + totalPrices[i] + "\n \n";
+            //}
         }
     }
 }

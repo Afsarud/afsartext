@@ -19,7 +19,8 @@ namespace CoffeShop
             //Application.Run(new CoffeeShop());
             //Application.Run(new BookShop());
             //Application.Run(new CoffeeShopListUi());
-            Application.Run(new StudentIformatioListUi());
+            //Application.Run(new StudentIformatioListUi());
+            Application.Run(new SoldierUi());
         }
     }
 }

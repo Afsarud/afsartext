@@ -53,3 +53,4 @@ F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.exe
 F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.pdb
 F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.CoffeeShopListUi.resources
 F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.StudentIformatioListUi.resources
+F:\Batch6Afsar\afsartext\CoffeShop\obj\Debug\CoffeShop.SoldierUi.resources
