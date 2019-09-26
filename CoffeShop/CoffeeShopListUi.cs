@@ -27,6 +27,7 @@ namespace CoffeShop
 
         private void addButton_Click(object sender, EventArgs e)
         {
+           
             string customerName = CusNameTextBox.Text;
             string contactNumber = contactTextBox.Text;
             string address = addressTextBox.Text;

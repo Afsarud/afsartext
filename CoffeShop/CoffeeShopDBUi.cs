@@ -10,16 +10,24 @@ using System.Windows.Forms;
 
 namespace CoffeShop
 {
-    public partial class SoldierUi : Form
+    public partial class CoffeeShopDBUi : Form
     {
-        public SoldierUi()
+        public CoffeeShopDBUi()
         {
             InitializeComponent();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            //ConnectionString
+            String
 
+
+            //sqlCommand
+
+            //open statement
+
+             //close Statement
         }
     }
 }

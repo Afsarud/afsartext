@@ -58,6 +58,12 @@
     <Compile Include="CoffeeShop.Designer.cs">
       <DependentUpon>CoffeeShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoffeeShopDBUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoffeeShopDBUi.Designer.cs">
+      <DependentUpon>CoffeeShopDBUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoffeeShopListUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoffeeShop.resx">
       <DependentUpon>CoffeeShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoffeeShopDBUi.resx">
+      <DependentUpon>CoffeeShopDBUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoffeeShopListUi.resx">
       <DependentUpon>CoffeeShopListUi.cs</DependentUpon>
