@@ -41,9 +41,9 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addressRichTextBox = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.addressRichTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +125,7 @@
             this.updateButton.TabIndex = 9;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // deleteButton
             // 
@@ -171,6 +172,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
             // 
+            // addressRichTextBox
+            // 
+            this.addressRichTextBox.Location = new System.Drawing.Point(110, 112);
+            this.addressRichTextBox.Name = "addressRichTextBox";
+            this.addressRichTextBox.Size = new System.Drawing.Size(156, 51);
+            this.addressRichTextBox.TabIndex = 14;
+            this.addressRichTextBox.Text = "";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -187,19 +196,11 @@
             this.idTextBox.Size = new System.Drawing.Size(156, 20);
             this.idTextBox.TabIndex = 13;
             // 
-            // addressRichTextBox
-            // 
-            this.addressRichTextBox.Location = new System.Drawing.Point(110, 112);
-            this.addressRichTextBox.Name = "addressRichTextBox";
-            this.addressRichTextBox.Size = new System.Drawing.Size(156, 51);
-            this.addressRichTextBox.TabIndex = 14;
-            this.addressRichTextBox.Text = "";
-            // 
             // CustomerUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 374);
+            this.ClientSize = new System.Drawing.Size(544, 390);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);

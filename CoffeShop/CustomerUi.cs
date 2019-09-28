@@ -13,11 +13,13 @@ namespace CoffeShop
 {
     public partial class CustomerUi : Form
     {
+        List<string> customerNames= new List<string>();
+
+
         public CustomerUi()
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string connectionString = @"server=DESKTOP-GIE8L6J; database= CoffeeShop; Integrated Security= True";
@@ -27,21 +29,57 @@ namespace CoffeShop
             SqlCommand sqlCommand = new SqlCommand(sqlcommand, sqlconnection);
 
             sqlconnection.Open();
-           
-           int isexecute= sqlCommand.ExecuteNonQuery();
-            if (isexecute > 0)
+            sqlCommand.ExecuteNonQuery();
+            string customerName = customerTextBox.Text;
+            customerNames.Add(customerName);
+            try
             {
-                MessageBox.Show("Added information !");
+                
+                for (int i = 0; i < customerNames.Count(); i++)
+                {
+                    if (customerName == customerNames[i])
+                    {
+                        MessageBox.Show("Customer Name already exist so retype other number");
+                        return;
+                    }
+
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Enter Information");
+
+                MessageBox.Show("Saved Information");
+                return;
             }
+            
+
+
+            //try
+            //{
+            //    int isexecute = sqlCommand.ExecuteNonQuery();
+            //    if (isexecute > 0)
+            //    {
+            //        MessageBox.Show(" Added information !");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Enter Information");
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+            //    MessageBox.Show("Insert Information");
+            //}
+            
+
             customerTextBox.Clear();
             contactTextBox.Clear();
             addressRichTextBox.Clear();
             label4.Hide();
             idTextBox.Hide();
+
             sqlconnection.Close();
         }
 
@@ -58,6 +96,7 @@ namespace CoffeShop
             DataTable dataTable = new DataTable();
             showDataGridView.DataSource = dataTable;
             sqldataadapter.Fill(dataTable);
+
             if (dataTable.Rows.Count > 0)
             {
                 MessageBox.Show("Show Data");
@@ -78,24 +117,63 @@ namespace CoffeShop
             string connectionString = @"server=DESKTOP-GIE8L6J; database= CoffeeShop; Integrated Security= True";
             SqlConnection sqlconnection = new SqlConnection(connectionString);
 
-            string sqlcommand = @"Delete Customer where Cus_ID = "+ idTextBox.Text+ "";
+            string sqlcommand = @"Delete Customer where Cus_ID = "+idTextBox.Text+ "";
+            SqlCommand sqlCommand = new SqlCommand(sqlcommand, sqlconnection);
+
+            sqlconnection.Open();
+           
+            try
+            {
+                int isexecute = sqlCommand.ExecuteNonQuery();
+                if (isexecute > 0)
+                {
+                    MessageBox.Show("Deleted information !");
+                }
+            }
+            catch (Exception)
+            {
+               
+                    MessageBox.Show("Not Deleted Information");
+                
+            }
+            
+            sqlconnection.Close();
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"server=DESKTOP-GIE8L6J; database= CoffeeShop; Integrated Security= True";
+            SqlConnection sqlconnection = new SqlConnection(connectionString);
+
+            //string sqlcommand = @"UPDATE Customer SET Customer_Name = '"+ customerTextBox.Text+ "' Where Cus_ID=" + idTextBox.Text+";";
+            string sqlcommand = @"UPDATE Customer SET Customer_Name = '" + customerTextBox.Text + "', Contact='"+ contactTextBox.Text+ "', Address ='"+ addressRichTextBox.Text+ "' Where Cus_ID=" + idTextBox.Text + ";";
             SqlCommand sqlCommand = new SqlCommand(sqlcommand, sqlconnection);
 
             sqlconnection.Open();
             try
             {
-                sqlCommand.ExecuteNonQuery();
+
+                int isexecute = sqlCommand.ExecuteNonQuery();
+                if (isexecute > 0)
+                {
+                    MessageBox.Show(" Updated !");
+                }
+                else
+                {
+                    MessageBox.Show("Not Updated");
+                }
+               
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Please enter ID which will be delete ");
+                MessageBox.Show("No data Updated");
             }
             
-
+            customerTextBox.Clear();
+            contactTextBox.Clear();
+            addressRichTextBox.Clear();
             sqlconnection.Close();
         }
-        
-        
     }
 }

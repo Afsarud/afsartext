@@ -4,6 +4,8 @@ select * from Customer
 select * from Item
 select * from Orders
 
+DELETE from Customer;
+
 delete from Catagory
 --Drop
 drop table Catagory;
@@ -18,29 +20,21 @@ primary key (Cus_ID)
 )
 
 --Insert
-insert into Customer 
-(Customer_Name,
-Contact,
-Address)
-values 
-(
-'Abir', 
-'45554', 
-'Dhaka'
-);
+insert into Customer (Customer_Name,Contact,Address)values ('Abir', '45554', 'Dhaka');
 
 --Select 
 Select * from Orders
 
-UPDATE
-Customer
-SET
-Customer_Name = 'Tarek'
-Where
-Cus_ID=2;
+UPDATE Customer SET Customer_Name = 'Tarek', Contact='545454', Address ='assafdf' Where Cus_ID=28;
 
 --delete
-Delete Customer where Cus_ID = 4;
+Delete Customer where Cus_ID =1;
+Delete Item where ItemID =1;
+Delete Orders where OrderID =1
+--select
+Select * from  Customer
+Select * from  Item
+Select * from  Orders
 
 --Create
 create table Item
@@ -92,6 +86,8 @@ SET
 Queintity = '3'
 Where
 OrderID=3;
+
+Select Customer_Name,Contact from Customer where Cus_ID < 10
 
 
 create table enrollment 
