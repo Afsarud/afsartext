@@ -19,7 +19,9 @@ namespace CoffeShop
         List<string> orders = new List<string>();
         List<int> queintityes = new List<int>();
         List<int> totalPrices = new List<int>();
-       
+
+        public int Price { get => price; set => price = value; }
+
         public CoffeeShopListUi()
         {
             InitializeComponent();

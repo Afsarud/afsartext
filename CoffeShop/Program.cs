@@ -21,7 +21,9 @@ namespace CoffeShop
             //Application.Run(new CoffeeShopListUi());
             //Application.Run(new StudentIformatioListUi());
             //Application.Run(new SoldierUi());
-            Application.Run(new CoffeeShopDBUi());
+           // Application.Run(new CoffeeShopDBUi());
+
+            Application.Run(new CustomerUi());
         }
     }
 }
